@@ -1,11 +1,56 @@
- <style>
-        h1{
-            text-align: center;
-            color: blue;
-            background-color: yellow;
-        }
-        
-        p{
-            color: brown;
-        }
-    </style>
+* {
+    /* background-image: url("assets/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.avif");
+    background-repeat: no-repeat;
+    background-position: 35% 20% 15%; */
+    
+    /* background: url("assets/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.avif") no-repeat center; */
+    /* background-size: cover; */
+    /* background-attachment: scroll; */
+    background-color: aqua;
+    outline: 2px solid red;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
+    /* font-family: Verdana, Arial, Tahoma, sans-serif; */
+    font-weight: bolder;
+    font-family: "Bubbler One", sans-serif;
+
+    font-style: italic;
+    font-display: optional;
+    /* font */
+    /* font-family: cursive; */
+
+    /* margin: 0; */
+}
+
+.bubbler-one-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.buda-light {
+  font-family: "Buda", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+.p1 {
+    background-color: rgb(123, 232, 6);
+    color: rgba(0, 0, 0, 0.683);
+    border: 12px solid transparent;
+    /* border-style: dotted; */
+    border-radius: 100px;
+    border-color: #65ca1d;
+    margin: 20px;
+    padding: 20px;
+    height: 100px;
+    max-width: 100%;
+}
+
+.p2 {
+    background-color: #65ca1d;
+    color: #ea980cee;
+}
+
+/* .p3 {
+    background-color: hsla(74, 82%, 48%, 0.797);
+} */

@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    overflow: visible;
+    scroll-behavior: smooth;
+    background-color: whitesmoke;
+}
+
+.header {
+    background-color: #ebebeb;
+    color: rgb(12, 10, 10);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+.footer {
+    background-color: #484747;
+    color: rgb(20, 20, 20);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.main {
+    display: flex;
+    min-height: calc(100vh - 117px);
+    max-width: 100%;
+}
+
+
+
+.tab {
+    margin: 10px 0px;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+

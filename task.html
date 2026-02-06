@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 HTML/CSS Layout Demos - Complete Assignment</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f5f5f5; padding: 20px; }
+    
+    .demo { margin: 40px 0; border: 2px solid #333; border-radius: 10px; overflow: hidden; }
+    .demo-header { background: #333; color: white; padding: 15px; font-size: 18px; font-weight: bold; }
+    .demo-container { background: white; padding: 20px; min-height: 300px; }
+    
+    /* Demo 1: Center Div */
+    #demo1 { height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); }
+    #demo1 .center-box { width: 250px; height: 120px; background: #4CAF50; border-radius: 10px; display: flex; justify-content: center; align-items: center; color: white; font-size: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    
+    /* Demo 2: Navigation Bar */
+    #demo2 nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #333; color: white; }
+    #demo2 nav ul { display: flex; list-style: none; gap: 2rem; }
+    #demo2 nav a { color: white; text-decoration: none; font-weight: bold; }
+    #demo2 nav a:hover { color: #4CAF50; }
+    
+    /* Demo 3: CSS Grid Gallery */
+    #demo3 { padding: 2rem; }
+    #demo3 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+    #demo3 .item { height: 200px; background: linear-gradient(45deg, #667eea, #764ba2); color: white; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    
+    /* Demo 4: Holy Grail Layout */
+    #demo4 { height: 100vh; display: grid; grid-template: 80px 1fr 60px / 220px 1fr 180px; font-family: Arial; }
+    #demo4 header { grid-area: 1 / 1 / 2 / 6; background: #333; color: white; display: flex; align-items: center; padding: 0 2rem; font-size: 24px; }
+    #demo4 nav { grid-area: 2 / 1 / 3 / 2; background: #f4f4f4; padding: 2rem; }
+    #demo4 main { grid-area: 2 / 2 / 3 / 5; padding: 2rem; background: white; overflow-y: auto; }
+    #demo4 aside { grid-area: 2 / 5 / 3 / 6; background: #e0e0e0; padding: 2rem; }
+    #demo4 footer { grid-area: 3 / 1 / 4 / 6; background: #333; color: white; display: flex; align-items: center; justify-content: center; }
+    
+    /* Demo 5: Sticky Header */
+    #demo5 { height: 150vh; padding-top: 100px; }
+    #demo5 header { position: sticky; top: 0; background: linear-gradient(90deg, #ff7b7b, #ff9a9a); color: white; padding: 1.5rem 2rem; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    #demo5 .content { padding: 2rem; background: white; margin: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    
+    /* Demo 6: Card Layout */
+    #demo6 .container { display: flex; gap: 2rem; padding: 2rem; flex-wrap: wrap; }
+    #demo6 .card { flex: 1 1 300px; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s; }
+    #demo6 .card:hover { transform: translateY(-5px); }
+    
+    /* Demo 7: Overlapping Elements */
+    #demo7 { position: relative; height: 300px; background: #f0f0f0; }
+    #demo7 .box1 { position: relative; top: 30px; left: 50px; width: 180px; height: 180px; background: #ff6b6b; border-radius: 50%; z-index: 1; }
+    #demo7 .box2 { position: absolute; top: 80px; left: 120px; width: 180px; height: 180px; background: #4ecdc4; border-radius: 20px; z-index: 2; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+    
+    /* Demo 8: Sticky Footer */
+    #demo8 html { height: 100%; }
+    #demo8 body { min-height: 100%; display: flex; flex-direction: column; }
+    #demo8 main { flex: 1; padding: 3rem 2rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+    #demo8 footer { background: #333; color: white; padding: 2rem; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
+    
+    /* Demo 9: Responsive Sidebar */
+    #demo9 { min-height: 100vh; }
+    #demo9 .layout { display: flex; }
+    #demo9 .sidebar { width: 280px; background: linear-gradient(180deg, #667eea, #764ba2); color: white; padding: 2rem; flex-shrink: 0; }
+    #demo9 .main { flex: 1; padding: 2rem; background: white; }
+    @media (max-width: 768px) {
+      #demo9 .layout { flex-direction: column; }
+      #demo9 .sidebar { order: -1; }
+    }
+    
+    /* Demo 10: Magazine Layout */
+    #demo10 { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+    #demo10 .magazine { column-count: 3; column-gap: 3rem; column-rule: 2px solid #ddd; }
+    #demo10 .magazine p { margin-bottom: 1.5rem; font-size: 16px; line-height: 1.8; break-inside: avoid; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      #demo2 nav ul { flex-direction: column; gap: 1rem; }
+      #demo3 .gallery { grid-template-columns: 1fr; }
+      #demo4 { grid-template: 70px 1fr 50px / 1fr; }
+      #demo10 .magazine { column-count: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo 1 -->
+  <div class="demo">
+    <div class="demo-header">1. Center Div (Flexbox)</div>
+    <div id="demo1" class="demo-container">
+      <div class="center-box">Perfectly Centered!</div>
+    </div>
+  </div>
+
+  <!-- Demo 2 -->
+  <div class="demo">
+    <div class="demo-header">2. Navigation Bar (Flexbox)</div>
+    <div id="demo2" class="demo-container">
+      <nav>
+        <div style="font-size: 24px; font-weight: bold;">Logo</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Demo 3 -->
+  <div class="demo">
+    <div class="demo-header">3. CSS Grid Gallery</div>
+    <div id="demo3" class="demo-container">
+      <div class="gallery">
+        <div class="item">Image 1</div>
+        <div class="item">Image 2</div>
+        <div class="item">Image 3</div>
+        <div class="item">Image 4</div>
+        <div class="item">Image 5</div>
+        <div class="item">Image 6</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo 4 -->
+  <div class="demo">
+    <div class="demo-header">4. Holy Grail Layout (CSS Grid)</div>
+    <div id="demo4" class="demo-container">
+      <header>🏠 Header Section</header>
+      <nav>📋 Navigation Menu</nav>
+      <main>📄 Main Content Area - Scroll to see more content Lorem ipsum dolor sit amet...</main>
+      <aside>⚙️ Sidebar Widgets</aside>
+      <footer>© 2026 Footer</footer>
+    </div>
+  </div>
+
+  <!-- Demo 5 -->
+  <div class="demo">
+    <div class="demo-header">5. Sticky Header</div>
+    <div id="demo5" class="demo-container">
+      <header>📌 Sticky Header - Scroll Down!</header>
+      <div class="content">
+        <h3>Scroll up to see sticky effect</h3>
+        <p>Long content to enable scrolling... Lorem ipsum dolor sit amet...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo 6 -->
+  <div class="demo">
+    <div class="demo-header">6. Card Layout (Flexbox)</div>
+    <div id="demo6" class="demo-container">
+      <div class="container">
+        <div class="card">
+          <h3>🃏 Card 1</h3>
+          <p>Equal height cards with hover effect</p>
+        </div>
+        <div class="card">
+          <h3>🃏 Card 2</h3>
+          <p>Responsive flex layout</p>
+        </div>
+        <div class="card">
+          <h3>🃏 Card 3</h3>
+          <p>Beautiful shadows & transitions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Demo 7 -->
+  <div class="demo">
+    <div class="demo-header">7. Overlapping Elements (Z-Index)</div>
+    <div id="demo7" class="demo-container">
+      <div class="box1"></div>
+      <div class="box2">z-index: 2 (Top)</div>
+    </div>
+  </div>
+
+  <!-- Demo 8 -->
+  <div class="demo">
+    <div class="demo-header">8. Sticky Footer (Flexbox)</div>
+    <div id="demo8" class="demo-container">
+      <main>
+        <h2>Main Content</h2>
+        <p>Short content - footer stays at bottom!</p>
+      </main>
+      <footer>📏 Always at Bottom Footer</footer>
+    </div>
+  </div>
+
+  <!-- Demo 9 -->
+  <div class="demo">
+    <div class="demo-header">9. Responsive Sidebar</div>
+    <div id="demo9" class="demo-container">
+      <div class="layout">
+        <aside class="sidebar">
+          <h3>Sidebar Menu</h3>
+          <ul style="list-style: none;">
+            <li>📁 Dashboard</li>
+            <li>📊 Analytics</li>
+            <li>⚙️ Settings</li>
+          </ul>
+        </aside>
+        <main class="main">
+          <h2>Main Content Area</h2>
+          <p>Resize browser to see mobile layout</p>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo 10 -->
+  <div class="demo">
+    <div class="demo-header">10. Magazine Layout (CSS Columns)</div>
+    <div id="demo10" class="demo-container">
+      <div class="magazine">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, doloremque.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit ut placeat magnam doloremque accusamus quidem?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore repellendus quidem laudantium perspiciatis maiores quisquam dicta magnam debitis consectetur dolor.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sit autem soluta veniam optio laborum molestiae dolorum repellat, iusto ea delectus, molestias, dicta natus expedita.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

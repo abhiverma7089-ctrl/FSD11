@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, velit!</p>
+        <button onclick="replace()" >Boom</button>
+    </div>
+
+    <div>
+        <img id="img" src="assets/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.avif">
+        <button onclick="change()">ChangeImage</button>
+    </div>
+</body>
+<script>
+    function replace() {
+        if(document.getElementById('p1').style.display == 'block') {
+            document.getElementById('p1').style.display = 'none'
+        } else {
+            document.getElementById('p1').style.display = 'block'
+        }
+    }
+
+    function change() {
+       const data = document.getElementById('img').getAttribute('src')
+       if(data === 'assets/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.avif') {
+           document.getElementById('img').setAttribute('src', 'images.jpg')
+       } else {
+        document.getElementById('img').setAttribute('src', 'assets/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.avif')
+       }
+       
+    }
+</script>
+</html>
